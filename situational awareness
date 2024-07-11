@@ -14,3 +14,10 @@ netstat -pantu
 uname -a
 w
 last 
+
+
+\\ip address\c$\windows\sys*
+remotely create a service
+sc_query wups hostame 
+
+cd \\ip\c$\windows\system32\
