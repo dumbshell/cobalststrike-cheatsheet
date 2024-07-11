@@ -8,14 +8,18 @@ ls c:\ will tell you what bit operating system
 any net command
 hashdump
 logonpasswords
+net computers
+nslookup
 
-Linuc SA ip addr
+
+Linux SA ip addr
 netstat -pantu
 uname -a
 w
 last 
 
-
+dir remotely
+dir \\fqdomain\c$\whatever...
 \\ip address\c$\windows\sys*
 remotely create a service
 sc_query wups hostame 
