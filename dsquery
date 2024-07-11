@@ -1,0 +1,7 @@
+run dsquery.exe * -filter "(&(objectclass=computer)(operatingsystem=*windows 7*))" -attr samaccountname  -limit 10
+
+  to find trusted domains**
+run dsquery.exe * -filter "(objectclass=trusteddomain)" -attr flatname trustdirection
+1= that domain trusts you, you can query other domain
+2= that domain trusts you
+3= Both DOmains are trusted
