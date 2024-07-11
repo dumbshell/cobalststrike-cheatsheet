@@ -1,0 +1,16 @@
+ipconfig
+netuser (user) (doamin)
+netstat -ano (Server name optional) 
+systeminfo
+tasklist
+whoami
+ls c:\ will tell you what bit operating system
+any net command
+hashdump
+logonpasswords
+
+Linuc SA ip addr
+netstat -pantu
+uname -a
+w
+last 
