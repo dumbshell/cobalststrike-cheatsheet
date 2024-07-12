@@ -29,3 +29,7 @@ run dsquery.exe * -filter "(objectclass=trusteddomain)" -attr flatname trustdire
 1= that domain trusts you, you can query other domain
 2= that domain trusts you
 3= Both Domains are trusted
+
+run dsquery * -filter "(name=trusteddomains)" -attr *
+run dsquery * -filter "(name=Domain Admins)" -attr * -d nublar.jurassic.local
+run dsquery * -filter "(sAMAccountName=*hammond*)" -attr * -d nublar.jurassic.local
