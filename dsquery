@@ -14,13 +14,34 @@ User
 Quota
 Partition
 * (Wildcard)
+
+Helpful queries to get started
+
+Find DCs:
+run dsquery Server -forest
+
+Find All Computers in a Domain
+run dsquery * -filter "(objectclass=computer) -attr dnshostname -limit 0 -d domain
+
+Find Trusted Direction:
+run dsquery * -filter "(objectclass=trusteddirection) -attr trusteddirection trusttype flatname -limit 0 -d domain
+
+Find specific computers:
+run dsquery * -filter "(&(objectclass=computer)(operatingsystem=7))" -attr samaccountname dnshostname operatingsystem description -limit 10 -d domain
+
+Find Admins:
+run dsquery * -filter "(&(objectclass=user)(admincount=1))" -attr name samaccountname memberof -limit 20 -d domain
+
+Find Account names:
+run dsquery * -filter "(name=manager) -attr * -limit 0
+
+run dsquery * -filter "(name=usernamefound) -attr * -limit 0
+
 run dsquery.exe * -filter "(objectclass=group)" -attr * -limit 2
+
 dsquery * -filter “(&(objectclass=computer)(name=*win*))” -attr name
 
-run dsquery.exe Server -Forest find other domains connected in the forest
-
 run dsquery * -filter "(&(objectclass=user)(admincount=1))" -attr name samaccountname memberof -limit 20 -d (fqdn)
-
 
 run dsquery.exe * -filter "(&(objectclass=computer)(operatingsystem=*windows #*))" -attr samaccountname  -limit 10
 
