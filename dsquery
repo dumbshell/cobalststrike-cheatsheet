@@ -41,7 +41,7 @@ run dsquery.exe * -filter "(objectclass=group)" -attr * -limit 2
 
 dsquery * -filter “(&(objectclass=computer)(name=*win*))” -attr name
 
-run dsquery * -filter "(&(objectclass=user)(admincount=1))" -attr name samaccountname memberof -limit 20 -d (fqdn)
+run dsquery * -filter "(&(objectclass=user)(admincount=1))" -attr name samaccountname memberof -limit 20 -d domain
 
 run dsquery.exe * -filter "(&(objectclass=computer)(operatingsystem=*windows #*))" -attr samaccountname  -limit 10
 
@@ -52,7 +52,7 @@ run dsquery.exe * -filter "(objectclass=trusteddomain)" -attr flatname trustdire
 3= Both Domains are trusted
 
 run dsquery * -filter "(name=trusteddomains)" -attr *
-run dsquery * -filter "(name=Domain Admins)" -attr * -d nublar.jurassic.local
-run dsquery * -filter "(sAMAccountName=*name*)" -attr * -d nublar.jurassic.local
+run dsquery * -filter "(name=Domain Admins)" -attr * -d domain
+run dsquery * -filter "(sAMAccountName=*name*)" -attr * -d domain
 run dsquery.exe * -filter "(objectclass=group)" -attr description member name samaccountname -limit 0 -l
 run dsquery.exe * -filter "(name=*name*)" -attr * -limit 0 -l
